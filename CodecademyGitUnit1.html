@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Codecademy Git Unit1 Notes</title>
+</head>
+<body>
+    <h1>Basic Git Workflow</h1>
+        <p>Git is the industry standard version control system for web developers.</p>
+        <p>A project managed with Git is called a Git repository.</p>
+        <p>GitHub is a popular hosting service for Git repositories. As GitHub is in the cloud, you can back-up your files,
+        share your code, and collaborate with others.
+        </p>
+        <p><strong>git init</strong> initializes a new project, essentially creating the working directory.<br>
+        <strong>git add <em>filename</em></strong> puts <em>filename</em> into the staging area.<br>
+        <strong>git add <em>filename1 filename2</em></strong> puts two files into staging.<br>
+        <strong>git status</strong> shows what is in the staging area.<br>
+        <strong>git commit -m "<em>comment</em>"</strong> moves everything in the staging area to the local repository.</p>
+        <img src="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/BasicGitWorkflow.jpg" width="920" height="372" 
+        alt="Basic Git Workflow Diagram">
+        <p><strong>git diff <em>filename</em></strong> checks the differences between the working directory and the staging
+        area.<br>
+        <strong>git log</strong> shows the history of commits. The log is in chronological order with the most recent commit 
+        at the top. Each commit entry contains:<br>
+        <ul>
+            <li>A 40 character hash code (called SHA) that uniquely identifies the commit</li>
+            <li>The commit author</li>
+            <li>The date and time of the commit</li>
+            <li>The commit message</li>
+        </ul>
+        </p>
+    <h1>BackTracking</h1>
+        <p>Backtracking differs from making a new commit. By backtracking instead of making new commits, we’re able to make
+         small changes to our previous commits without cluttering our repository history with commit messages similar to 
+         “forgot to add file X from my previous commit so doing that now.” It’s important to understand that when you
+         backtrack to amend your last commit, you’re not so much fixing it as replacing it entirely with a new, improved
+         commit that pushes the old commit out of the way and puts the new commit in its place. Effectively, it’s as if the
+         previous commit never happened, and it won’t show up in your repository history.</p>
+        <p>In Git, the commit you are currently on is known as the HEAD commit.</p>
+        <p>To see the HEAD commit, enter <strong>git show HEAD</strong> The output will display everything the git log
+         command displays for the HEAD commit, plus all of the file changes that were commited.</p>
+        <p>Say that you've made a change to a file in your working directory, but decide that you want to go back to how
+         you had it before the last commit (having forgotten the exact differences). Typing <strong>git checkout HEAD <em>
+         filename</em></strong> will change your working copy back. (shortcut: <strong>git checkout -- <em>filename</em>
+         </strong>)</p>
+        <p>Say that you've added a file to staging, continued to make changes to the file in the working directory, and 
+         then realize that you shouldn't have added that file to staging. Typing <strong>git reset HEAD <em>filename</em>
+         </strong> will reset the file in staging to be the same as the HEAD commit. It does not discard file changes from 
+         the working directory, it just removes them from the staging area.</p>
+        <p>Say that you've commited several times and realize you would like to restart at a point several commits back. 
+         Type <strong>git reset <em>commit_SHA</em></strong> where <em>commit_SHA</em> is the first seven characters of
+         the 40 character hash code that corresponds to the last commit that you would like to return to. HEAD is now set
+         to that previous commit.</p>
+        
+</body>
+<footer>
+    <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/index.html" target="_bound">Git Notes Home</a> | 
+    <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/CodecademyGitUnit2.html" target="_bound">Next</a>
+</footer>
+</html>

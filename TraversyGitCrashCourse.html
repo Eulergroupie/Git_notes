@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>Git Notes from Crash Course by Traversy</title>
+</head>
+<body>
+    <h1>Git Notes from Crash Course by Traversy</h1>
+    <h3>Basic Commands</h3>
+        <ul>
+            <li><strong>git init:</strong> initializes repository and workspace</li>
+            <li><strong>git add <em>file</em>:</strong> saves workspace files to staging</li>
+            <li><strong>git commit:</strong> saves staged files to the local repository</li>
+            <li><strong>git status:</strong> shows workspace versus staging info</li>
+            <li><strong>git push:</strong> saves local repository to a remote repository</li>
+            <li><strong>git pull:</strong> updates local repository from remote repository</li>
+            <li><strong>git clone:</strong> copies a remote repository to the current folder</li>
+        </ul>
+    <h3>Getting Started</h3>
+        <strong>git --version</strong> Tells you if you have git and what version if you do have it.<br>
+        <a href ="https://git-scm.com/download" target ="_bound">download here if you need it</a><br>
+        Git Bash is a highly recommended alternative to the command prompt for dealing with your repositories.<br>
+        <strong>git config --global user.name "<em>your name</em>"</strong> to indicate who makes changes.<br>
+        <strong>git config --global user.email "<em>your email</em>"</strong> so you can be contacted.
+        <strong>git config --list</strong> will show git configuration environment variables.
+    <h3>An example of a normal workflow</h3>
+        <p>Make a new folder for each project.<br>
+        After creating some files, you find that you want to save them to your repository.<br>
+        Type <strong>git init</strong> which will write a hidden file called <strong>.git</strong><br>
+        Type <strong>git add <em>filename</em></strong> to add your file to staging.<br>
+        Type <strong>git status</strong> to show what is staged and what is not.<br>
+        If you decide to remove a file from staging, type <strong>git rm --cached <em>filename</em></strong><br>
+        Wildcards can be used to describe filenames, and <strong>git add .</strong> is a fast way to add everything in the folder.<br>
+        <strong>git commit</strong> will open up your selected editor (shown in environment variables) to make a comment before saving
+         everything in the staging area to your local repository.<br>
+        <strong>git commit -m "<em>comment</em>"</strong> is generally more convenient.</p>
+        <p>You can list files that you don't want included in staging commands in a file that you create called <strong>.gitignore</strong>. 
+        Files that are created during the compilation process are good candidates for the ignore file. <strong>git add .</strong> can 
+         then be used without pulling those ignored files into staging.</p>
+        <p><em>master</em> is the default name of your local repository's top level. You can branch from the master in order to experiment
+         or make changes that will require review/testing before they are included in <em>master</em>.<br>
+        <strong>git branch <em>branch-name</em></strong> will create a new branch from the current one (master at first).<br>
+        <strong>git checkout <em>branch-name</em></strong> changes your current branch to the new one (like <em>cd</em>)<br>
+        Changes and new files committed will be a part of the branch that you are in. A file manager will show the new files. If you 
+         switch back to master with <strong>git checkout master</strong>, changes and new files disappear from view (shown in file
+         manager and any open files in editors).<br>
+        If you now type <strong>git merge <em>branch-name</em></strong> from the master branch, the changes will be brought into 
+         the master branch. <strong>git branch -d <em>branch-name</em></strong> then deletes the branch.</p>
+    <h3>Going remote</h3>
+        <p>Create an account on github if you haven't already. Use their UI to create a new repository and copy the url for it to your
+         clipboard. There are good instructions in the UI for creating the remote repository on the command line.<br>
+        The important part is <strong>git remote add origin <em>https://github.com/account-name/repo-name.git</em></strong><br>
+        The name of your remote's master branch is usually <em>origin</em>. Typing <strong>git remote</strong> will show the 
+         current remote branch name.<br> 
+        Type <strong>git push -u origin master</strong> to save your local repo to the remote.<br>
+        A README.md (md for markdown) is standard for describing your project to the public. Once created... <br>
+        <strong>git add README.md</strong><br>
+        <strong>git commit -m "added README"</strong><br>
+        <strong>git push</strong></p>
+    <h3>Starting from someone's project</h3>
+        <p>Change directories on your computer to the location that you would put a project directory for the desired project.<br>
+        Copy the url for the project in GitHub to your clipboard.
+        On the command line type <strong>git clone <em>copied url</em></strong><br>
+        If you are working on it and believe that someone else may have made a change (or right before you try to upload a change) 
+         type <strong>git pull</strong> to update.</p>
+</body>
+<footer>
+    <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/index.html" target="_bound">Git Notes Home</a>
+</footer>

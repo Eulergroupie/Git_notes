@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Codecademy Git Unit 2 Notes</title>
+    </header>
+    <body>
+        <h1>Git Branching and Merging</h1>
+        <h2>Branching</h2>
+            <p>The default local repository is the Git branch called master. Git allows us to create branches to experiment
+             with versions of a project. Imagine you want to create a version of a story with a happy ending. You can create a new
+             branch and make the happy ending changes to that branch only. It will have no effect on the master branch until you’re
+             ready to merge the happy ending to the master branch.<br>
+             Type <strong>git branch</strong> to see which branch you're on. In the output, the * (asterisk) is showing you what
+             branch you’re on.</p>
+            <p>Type <strong>git branch <em>new_branch</em></strong> to create a new branch.<br>
+            Switch to the new branch with <strong>git checkout <em>branch_name</em></strong>.<br>
+            Now when you add or commit files, you will be doing it in the new branch.</p>
+        <h2>Merging</h2>
+            <p>If you decide that the version in the new branch is suitable for being the main project, you can merge the branch
+             into the master branch. To do this, switch to the master branch with <strong>git checkout master</strong> and then
+             type <strong>git merge <em>branch_name</em></strong>. Now you could switch back to the other branch and continue with
+             changes, or you could stay in master and delete the branch with <strong>git branch -d <em>branch_name</em></strong>. 
+             If you decided not to merge the branch in the first place, you can simply delete the branch by switching to master
+             and typing <strong>git branch -D <em>branch_name</em></strong>. The capital D is necessary if the branch was not
+             merged. Note: In this example, the new branch is called the "giver" while the master is the "receiver".</p>
+        <h2>Merge Conflicts</h2>
+            <p>If changes are made to the master branch while changes have also been made to a new branch, an error called a merge
+             conflict may appear when trying to merge the new branch back into the master. Git will not choose which branch changes 
+             have higher priority. It marks the file(s) with changes indicating which version exists in the master (HEAD) and which 
+             changes occur in the new branch. If the edits are not visible, you may have to close and re-open the file(s). In order to
+             overcome the conflict, the file(s) must be changed in the master branch such that one version of the edits is selected 
+             and all edit marks created by Git are removed. Then the file(s) should be added and commited. Then delete the other
+             branch.</p>
+    </body>
+    <footer>
+        <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/index.html" target="_bound">Git Notes Home</a> | 
+        <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/CodecademyGitUnit1.html" target="_bound">Previous</a> |
+        <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/CodecademyGitUnit3.html" target="_bound">Next</a>
+    </footer>
+</html>

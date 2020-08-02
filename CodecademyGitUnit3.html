@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Codecademy Git Unit 3 Notes</title>
+    </header>
+    <body>
+        <h1>Collaboration</h1>
+            <p>Git offers a suite of collaboration tools to make working with others on a project easier. 
+            A <em>remote repository</em> is a shared Git repository that allows multiple collaborators to work on the same Git project
+             from different locations. Collaborators work on the project independently, and merge changes together when they are
+             ready to do so.</p>
+            <strong>Features of a remote repository:</strong>
+            <ul>
+                <li>A complete replica of the project on your own computers</li>
+                <li>A way to keep track of and review each other’s work</li>
+                <li>Access to a definitive project version</li>
+            </ul>
+        <h2>Cloning</h2>
+            <p>In order to get a replica of a repository type <strong>git clone <em>remote_location clone_name</em></strong>. <br>
+            <em>remote_location</em> tells Git where to go to find the remote repository. This could be a web address or a
+             filepath.<br>
+            <em>clone_name</em> is the name you give to the directory in which Git will clone the repository locally. Your local 
+             repository is not visible to other collaborators. The default name of the remote repository is <em>origin</em>. <br>
+            Type <strong>git remote -v</strong> to see a list of a Git project's remotes.</p>
+        <h2>Fetching and Merging Updates</h2>
+            <p>An easy way to see if changes have been made to the remote and bring the changes down to your local copy is with 
+             <strong>git fetch</strong>. This command will not merge changes from the remote into your local repository. It brings
+             those changes onto what’s called a remote branch. Even though the new commits have been fetched to your local copy of
+             the Git project, those commits are on the origin/master branch. Your local master branch has not been updated yet, so
+             you can’t view or make changes to any of the work added. Now we would use the git merge command to integrate
+             origin/master into your local master branch. Type <strong>git merge origin/master</strong> to do this. Git will
+             perform a “fast-forward” merge, bringing your local master branch up to speed with the most recent commit on the remote.
+            </p>
+        <h2>Git Workflow</h2>
+            <p>The workflow for Git collaborations typically follows this order:
+                <ol>
+                    <li>Fetch and merge changes from the remote</li>
+                    <li>Create a branch to work on a new project feature</li>
+                    <li>Develop the feature on your branch and commit your work</li>
+                    <li>Fetch and merge from the remote again (in case new commits were made while you were working)</li>
+                    <li>Push your branch up to the remote for review</li>
+                </ol></p>
+            <p>Step 5 is where you share your work with the remote repository by typing <strong>git push origin 
+             <em>your_branch_name</em></strong>, where <em>your_branch_name</em> is the local branch that you worked on and wish to
+             update the remote.</p>
+            <p>Git projects are usually managed on Github, a website that hosts Git projects for millions of users. With Github you
+             can access your projects from anywhere in the world by using the basic workflow you learned here.</p>
+    </body>
+    <footer>
+        <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/index.html" target="_bound">Git Notes Home</a> | 
+        <a href="file:///D:/DAVEDATA/ProgDev/The%20Web%20and%20HTML/Git_notes/CodecademyGitUnit2.html" target="_bound">Previous</a>
+    </footer>
+</html>
